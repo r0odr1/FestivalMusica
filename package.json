@@ -11,5 +11,8 @@
     "Gulp"
   ],
   "author": "Rodrigo Bonilla",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.71.1"
+  }
 }
