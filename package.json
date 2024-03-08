@@ -13,6 +13,7 @@
   "author": "Rodrigo Bonilla",
   "license": "ISC",
   "devDependencies": {
+    "gulp": "^4.0.2",
     "sass": "^1.71.1"
   }
 }
