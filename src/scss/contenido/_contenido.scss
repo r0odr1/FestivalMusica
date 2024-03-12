@@ -1,3 +1,5 @@
+@use "base/variables" as v;
+
 h1 {
-  color: $red;
+  color: v.$red;
 }
