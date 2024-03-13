@@ -368,3 +368,10 @@ h3 {
 .main-navigation a:hover {
   color: #fef46d;
 }
+
+.prueba {
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  color: black;
+  letter-spacing: 1px;
+}
