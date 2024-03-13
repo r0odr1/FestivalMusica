@@ -10,6 +10,20 @@
 }
 
 .main-navigation {
+  background-color: red;
+  @include m.phone {
+    background-color: blue;
+  }
+  @include m.tablet {
+    background-color: cornflowerblue;
+  }
+  @include m.desktop {
+    background-color: darkgreen;
+  }
+  @include m.desktopXL {
+    background-color: white;
+  }
+
   a {
     color: v.$white;
     font-size: 2.4rem;
@@ -19,4 +33,3 @@
     }
   }
 }
-
