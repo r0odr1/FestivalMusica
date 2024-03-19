@@ -19,6 +19,7 @@ body {
 p {
   font-size: 2rem;
   color: v.$black;
+  line-height: 1.5;
 }
 
 .container {
@@ -31,7 +32,9 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0 0 5rem 0;
 }
 
@@ -45,4 +48,9 @@ h2 {
 
 h3 {
   font-size: 3rem;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
