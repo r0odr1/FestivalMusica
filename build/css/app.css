@@ -494,7 +494,7 @@ img {
 }
 .lineup .day {
   text-transform: uppercase;
-  margin-bottom: 5rem;
+  margin: 5rem 0;
 }
 
 @media (min-width: 768px) {
@@ -529,10 +529,29 @@ img {
   background-image: url(../img/icono_rock.png);
 }
 
+.calendar {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.calendar li {
+  padding: 2.5rem;
+  font-weight: 700;
+}
+.calendar li span {
+  font-weight: 400;
+}
+
 .bg-yellow {
   background-color: #fef46d;
+}
+.bg-yellow li:nth-child(odd) {
+  background-color: #fdee21;
 }
 
 .bg-green {
   background-color: #4cb8b3;
+}
+.bg-green li:nth-child(odd) {
+  background-color: #3b9691;
 }
