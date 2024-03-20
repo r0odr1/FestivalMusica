@@ -26,7 +26,7 @@ function imagenes(done) {
     optimizationLevel: 3,
   };
 
-  src("src/img/**/*.{png, jpg}")
+  src("src/img/**/*.{png,jpg}")
     .pipe(cache(imagemin(options)))
     .pipe(dest("build/img"));
   done();
@@ -41,7 +41,9 @@ function versionWebp(done) {
         quality: 50,
       };
 
-      src("src/img/**/*.{png,jpg}").pipe(webp(options)).pipe(dest("build/img"));
+      src("src/img/**/*.{png,jpg}")
+        .pipe(webp(options))
+        .pipe(dest("build/img"));
 
       done();
     })
