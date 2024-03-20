@@ -5,9 +5,10 @@ const { src, dest, watch, parallel } = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
 const plumber = require("gulp-plumber");
 
-//
+// Imagenes
 const cache = require("gulp-cache");
 const imagemin = require("gulp-imagemin");
+const avif = require("gulp-avif");
 
 function css(done) {
   src("src/scss/**/*.scss") // Identificar el archivo SASS
@@ -40,9 +41,7 @@ function versionWebp(done) {
         quality: 50,
       };
 
-      src("src/img/**/*.{png,jpg}")
-        .pipe(webp(options))
-        .pipe(dest("build/img"));
+      src("src/img/**/*.{png,jpg}").pipe(webp(options)).pipe(dest("build/img"));
 
       done();
     })
@@ -50,6 +49,17 @@ function versionWebp(done) {
       console.log("Error importando gulp-webp", error);
       donde(error); // Pasar el error para indicar falla en la tarea
     });
+}
+
+function versionAvif(done) {
+  const options = {
+    quality: 50,
+  };
+
+  src("src/img/**/*.{png,jpg}")
+    .pipe(avif(options))
+    .pipe(dest("build/img"));
+  done();
 }
 
 function dev(done) {
@@ -60,4 +70,5 @@ function dev(done) {
 exports.css = css;
 exports.imagenes = imagenes;
 exports.versionWebp = versionWebp;
-exports.dev = parallel(imagenes, versionWebp, dev);
+exports.versionAvif = versionAvif;
+exports.dev = parallel(imagenes, versionWebp, versionAvif, dev);
