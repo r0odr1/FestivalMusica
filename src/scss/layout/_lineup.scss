@@ -1,0 +1,61 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.lineup {
+  background-color: v.$pink;
+  padding: 5rem 0;
+
+  h3,
+  p {
+    text-align: center;
+    color: v.$white;
+  }
+
+  .day {
+    text-transform: uppercase;
+    margin-bottom: 5rem;
+  }
+}
+
+.container-scenarios {
+  @include m.tablet {
+    @include m.grid(2, 5rem);
+  }
+
+  p {
+    color: v.$black;
+  }
+
+  .scenario {
+    padding-top: 2rem;
+
+    .scenario-name {
+      &:after {
+        content: '';
+        display: block;
+        width: 20rem;
+        height: 10rem;
+        background-size: 15rem;
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin: 2rem auto 0 auto;
+      }
+    }
+  }
+}
+
+.edm .scenario-name:after {
+  background-image: url(../img/icono_edm.png);
+}
+
+.rock .scenario-name:after {
+  background-image: url(../img/icono_rock.png);
+}
+
+.bg-yellow {
+  background-color: v.$yellow;
+}
+
+.bg-green {
+  background-color: v.$green;
+}
