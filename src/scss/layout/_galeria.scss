@@ -44,3 +44,18 @@
     max-width: 80rem;
   }
 }
+
+.btn-cerrar {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: v.$white;
+  color: v.$black;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
