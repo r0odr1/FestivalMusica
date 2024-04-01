@@ -11,12 +11,15 @@ function iniciarApp() {
 function navegacionFija() {
   const barra = document.querySelector(".header");
   const aboutFestival = document.querySelector(".about-festival");
+  const body = document.querySelector('body');
 
   window.addEventListener("scroll", function () {
     if (aboutFestival.getBoundingClientRect().bottom < 0) {
       barra.classList.add("fijo");
+      body.classList.add("body-scroll");
     } else {
       barra.classList.remove("fijo");
+      body.classList.remove("body-scroll");
     }
   });
 }
