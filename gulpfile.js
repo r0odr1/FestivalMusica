@@ -1,9 +1,11 @@
 const { src, dest, watch, parallel } = require("gulp");
 
 // CSS
-
 const sass = require("gulp-sass")(require("sass"));
 const plumber = require("gulp-plumber");
+const autoprefixer = require("autoprefixer");
+const cssnano = require("cssnano");
+const postcss = require("gulp-postcss");
 
 // Imagenes
 const cache = require("gulp-cache");
@@ -14,6 +16,7 @@ function css(done) {
   src("src/scss/**/*.scss") // Identificar el archivo SASS
     .pipe(plumber())
     .pipe(sass()) // Compilado
+    .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(dest("build/css")); // Almacenarla en el dico duro
 
   done(); // Callback que avisa a gulp cuando llegamos al final
@@ -41,9 +44,7 @@ function versionWebp(done) {
         quality: 50,
       };
 
-      src("src/img/**/*.{png,jpg}")
-        .pipe(webp(options))
-        .pipe(dest("build/img"));
+      src("src/img/**/*.{png,jpg}").pipe(webp(options)).pipe(dest("build/img"));
       done();
     })
     .catch((error) => {
@@ -57,15 +58,12 @@ function versionAvif(done) {
     quality: 50,
   };
 
-  src("src/img/**/*.{png,jpg}")
-    .pipe(avif(options))
-    .pipe(dest("build/img"));
+  src("src/img/**/*.{png,jpg}").pipe(avif(options)).pipe(dest("build/img"));
   done();
 }
 
 function javascript(done) {
-  src("src/js/**/*.js")
-    .pipe(dest('build/js'));
+  src("src/js/**/*.js").pipe(dest("build/js"));
   done();
 }
 
@@ -80,4 +78,4 @@ exports.js = javascript;
 exports.imagenes = imagenes;
 exports.versionWebp = versionWebp;
 exports.versionAvif = versionAvif;
-exports.dev = parallel(imagenes, versionWebp, versionAvif,javascript, dev);
+exports.dev = parallel(imagenes, versionWebp, versionAvif, javascript, dev);
