@@ -3,15 +3,28 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function iniciarApp() {
+  navegacionFija();
   crearGaleria();
   scrollNav();
+}
+
+function navegacionFija() {
+  const barra = document.querySelector(".header");
+  const aboutFestival = document.querySelector(".about-festival");
+
+  window.addEventListener("scroll", function () {
+    if (aboutFestival.getBoundingClientRect().bottom < 0) {
+      barra.classList.add("fijo");
+    } else {
+      barra.classList.remove("fijo");
+    }
+  });
 }
 
 function scrollNav() {
   const enlaces = document.querySelectorAll(".main-navigation a");
   enlaces.forEach((enlace) => {
     enlace.addEventListener("click", function (e) {
-
       e.preventDefault();
 
       const seccionScroll = e.target.attributes.href.value;
