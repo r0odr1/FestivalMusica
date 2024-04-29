@@ -12,7 +12,7 @@ function resaltarEnlace(){
     sections.forEach( section => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.clientHeight;
-      if(window.scrollY >= (sectionTop - sectionHeight / 3)) {
+      if(window.scrollY >= (sectionTop - sectionHeight / 2)) {
         actual = section.id;
       }
     })
