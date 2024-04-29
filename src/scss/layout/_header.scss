@@ -47,7 +47,8 @@
       margin: 0;
     }
 
-    &:hover {
+    &:hover,
+    &.active {
       color: v.$yellow;
     }
   }

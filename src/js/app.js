@@ -1,6 +1,30 @@
 document.addEventListener("DOMContentLoaded", function () {
   iniciarApp();
+  resaltarEnlace();
 });
+
+function resaltarEnlace(){
+  document.addEventListener('scroll', function() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.main-navigation a');
+
+    let actual = '';
+    sections.forEach( section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if(window.scrollY >= (sectionTop - sectionHeight / 3)) {
+        actual = section.id;
+      }
+    })
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if(link.getAttribute('href') === '#' + actual) {
+        link.classList.add('active');
+      }
+    })
+  })
+}
 
 function iniciarApp() {
   navegacionFija();
@@ -14,7 +38,7 @@ function navegacionFija() {
   const body = document.querySelector('body');
 
   window.addEventListener("scroll", function () {
-    if (aboutFestival.getBoundingClientRect().bottom < 0) {
+    if (aboutFestival.getBoundingClientRect().bottom < 1) {
       barra.classList.add("fijo");
       body.classList.add("body-scroll");
     } else {
