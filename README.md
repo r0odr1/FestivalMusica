@@ -4,8 +4,11 @@
 
 ## 📸 Capturas de Pantalla
 
-![Captura de pantalla de Music Festivals](https://musics-festivals.netlify.app/images/captura1.jpg)
-![Vista responsiva en dispositivos móviles](https://musics-festivals.netlify.app/images/captura2.jpg)
+![image](https://github.com/user-attachments/assets/0a4b2af1-0f33-4219-8ffc-13950f0ba98f)
+![image](https://github.com/user-attachments/assets/57cedbfa-edc7-4b7e-a45d-fbc90327f902)
+
+![image](https://github.com/user-attachments/assets/9a6a31a0-68b2-4cb3-aab0-abec842c51c6)
+![image](https://github.com/user-attachments/assets/f5dcb04a-254d-447e-8f1c-885599d3788a)
 
 ## 🧾 Descripción
 
